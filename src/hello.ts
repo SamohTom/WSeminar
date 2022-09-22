@@ -1,3 +1,4 @@
+import { isThisTypeNode } from "../node_modules/typescript/lib/typescript"
 
 class Bruch{
     constructor(public n: number,public z: number){}
@@ -13,9 +14,11 @@ class Bruch{
 
     add(bruch: Bruch){
         if(this.n != bruch.n){
-
+            this.n *= bruch.n    
+            this.z *= bruch.n
+            this.z += bruch.z * this.z 
         }else{
-            
+            this.n += bruch.n
         }
     }
 }

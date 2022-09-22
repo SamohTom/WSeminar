@@ -12,9 +12,14 @@ class Bruch {
     }
     add(bruch) {
         if (this.n != bruch.n) {
+            this.n *= bruch.n;
+            this.z *= bruch.n;
+            this.z += bruch.z * this.z;
         }
         else {
+            this.n += bruch.n;
         }
     }
 }
+export {};
 //# sourceMappingURL=hello.js.map
