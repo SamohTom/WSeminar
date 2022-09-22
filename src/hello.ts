@@ -1,10 +1,11 @@
 import { isThisTypeNode } from "../node_modules/typescript/lib/typescript"
 
 class Bruch{
-    constructor(public n: number,public z: number){}
+    constructor(public z: number, public n: number){}
 
     show(){
-        console.log(this.n + "\n" + this.z)
+        console.log(this.z + "\n" + this.n)
+        console.log("-----------")
     }
 
     multiplizieren(bruch: Bruch){
@@ -14,11 +15,21 @@ class Bruch{
 
     add(bruch: Bruch){
         if(this.n != bruch.n){
+            let bz = bruch.z * this.n
             this.n *= bruch.n    
             this.z *= bruch.n
-            this.z += bruch.z * this.z 
+            
+            this.z += bz
         }else{
-            this.n += bruch.n
+            this.z += bruch.z
         }
     }
 }
+
+let b1 = new Bruch(1, 2)
+let b2 = new Bruch(1, 3)
+b1.show()
+b2.show()
+
+b1.add(b2)
+b1.show()
