@@ -31,5 +31,5 @@ let b2 = new Bruch(1, 3)
 b1.show()
 b2.show()
 
-b1.add(b2)
+b1.multiplizieren(b2)
 b1.show()
